@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
     <title>QR-Code-Generator</title>
 </head>
 <body>
-<img src="{{ data|qrcode }}">
+<H1 style="text-align: center; background-color: #eee; border-radius: .5em;">QRCode-Generator</H1>
+<p style="text-align: center;">
+
+</p>
+<form action="qr.html" style="text-align: center">
+    <label for="qr" style="font-size: 2em;">Was soll im QR-Code stehen?</label><br>
+    <input type="text" name="qr" id="qr" size="60" maxlength="120">
+    <br><br>
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+
+
+
 </body>
 </html>

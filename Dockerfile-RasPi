@@ -1,4 +1,4 @@
-FROM python:3.9.18-slim
+FROM python:slim
 
 LABEL authors="tebarius"
 LABEL version="1.0"
@@ -6,9 +6,13 @@ LABEL description="Simple QR-Code-Generator-Server"
 
 WORKDIR /app
 
-COPY ./templates ./Flask-QR.py ./requirements.txt /app/
+RUN mkdir templates
+COPY ./templates /app/templates/
+COPY ./Flask-QR.py ./requirements.txt /app/
 
-RUN pip install --upgrade pip
+RUN apt-get update && apt-get install -y zlib1g-dev libjpeg-dev libpng-dev gcc
+#RUN python -m pip install --upgrade pip
+#RUN python -m pip install --upgrade pillow
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 80

@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
     <title>QR-Code-Generator</title>
 </head>
 <body>
-<img src="{{ url|qrcode }}">
+<H1 style="text-align: center; background-color: #eee; border-radius: .5em;">QRCode-Generator</H1>
+<p style="text-align: center; font-size: 2em;">
+    <b>folgender Text wurde im QR-Code codiert:</b><br>
+    {{ data }} <br>
+    <br>
+    <!--suppress HtmlUnknownTarget -->
+    <img src="{{ data|qrcode }}" alt="QR-Code f&uuml;r {{ data }}">
+</p>
+<p style="text-align: center; font-size: 1.5em;">
+<a href="./">Noch einmal bitte!</a>
+</p>
+
 </body>
 </html>
