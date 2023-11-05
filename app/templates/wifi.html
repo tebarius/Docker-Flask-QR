@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form action="qr.html">
+    <label>Gib bitte Details zum WIFI ein!</label><br />
+    <input type="hidden" name="type" value="wifi">
+
+    <label for="ssid">SSID:</label>
+        <input type="text" name="ssid" id="ssid" size="30" maxlength="60" required><br />
+
+
+
+
+
+
+
+
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+{% endblock %}

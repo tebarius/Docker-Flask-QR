@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form action="qr.html">
+    <label>Wie lautet die EMail-Adresse?</label><br />
+    <input type="hidden" name="type" value="mail">
+
+    <label for="mail">EMail:</label>
+        <input type="email" name="mail" id="mail" size="30" maxlength="60" required><br />
+    <label><i>optionale Angaben:</i></label><br />
+    <label for="subject">Betreff:</label>
+        <input type="text" name="subject" id="subject" size="30" maxlength="120"><br />
+    <label for="cc">CC:</label>
+        <input type="email" name="cc" id="cc" size="30" maxlength="60"><br />
+    <label for="bcc">BCC:</label>
+        <input type="email" name="bcc" id="bcc" size="30" maxlength="60"><br />
+    <label for="body">Body / Text:</label>
+        <input type="text" name="body" id="body" size="30" maxlength="180"><br />
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+{% endblock %}

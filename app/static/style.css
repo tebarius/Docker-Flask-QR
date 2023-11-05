@@ -1,0 +1,28 @@
+    H1 {
+        text-align: center;
+        background-color: #eee;
+        border-radius: 60px;
+        filter: drop-shadow(10px 10px 20px blue);
+        font-size: 70px;
+        }
+    p {
+        text-align: center;
+        font-size: 50px;
+        }
+    div {
+       text-align: center;
+       font-size: 50px;
+       }
+    form {
+           text-align: center;
+           font-size: 50px;
+           }
+    input { font-size: 30px;
+            }
+    button {
+        border: solid gainsboro;
+        font-size: 30px;
+        margin: 15px;
+        border-radius: 50px;
+        filter: drop-shadow(10px 10px 10px blue);
+        }

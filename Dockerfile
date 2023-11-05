@@ -1,8 +1,8 @@
 FROM python:slim
 
 LABEL authors="tebarius"
-LABEL version="1.0"
-LABEL description="Simple QR-Code-Generator-Server"
+LABEL version="1.1"
+LABEL description="QR-Code-Generator-Server with Flask-App"
 
 WORKDIR /app
 COPY ./app /app/

@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dockerfile-Raspi" type="docker-deploy" factoryName="dockerfile" server-name="Docker-RasPi">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="flask-qrcode-gen:latest" />
+        <option name="containerName" value="flask-qrcode-gen" />
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="80" />
+              <option name="hostPort" value="8002" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="sourceFilePath" value="Dockerfile-RasPi" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

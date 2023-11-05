@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form action="qr.html">
+    <label>Wie lautet die URL / Webadresse?<br>(inkl. http...)</label><br />
+    <input type="hidden" name="type" value="url">
+
+    <label for="url">URL:</label>
+        <input type="url" name="url" id="url" size="30" maxlength="120" required><br />
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+{% endblock %}

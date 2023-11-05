@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <title>QR-Code-Generator</title>
-</head>
-<body>
-<H1 style="text-align: center; background-color: #eee; border-radius: .5em;">QRCode-Generator</H1>
-<p style="text-align: center;">
+{% extends "base.html" %}
 
-</p>
-<form action="qr.html" style="text-align: center">
-    <label for="qr" style="font-size: 2em;">Was soll im QR-Code stehen?</label><br>
-    <input type="text" name="qr" id="qr" size="60" maxlength="120">
-    <br><br>
-    <button type="reset">Eingaben zur&uuml;cksetzen</button>
-    <button type="submit">Eingaben absenden</button>
-</form>
-
-
-
-
-</body>
-</html>
+{% block inhalt %}
+    <p>
+    <b>Welche Art von QR-Code soll generiert werden?</b><br>
+    <div><button><a href="./text.html">einfacher Text </a></button></div>
+    <div><button><a href="./url.html">URL/Website-Link</a></button></div>
+    <div><button><a href="./tel.html">Telefonnummer</a></button></div>
+    <!--<div><button><a href="./vcard.html">Visitenkarte (vCard)</a></button></div>-->
+    <!--<div><button><a href="./geo.html">geographische Koordinaten</a></button></div>-->
+    <div><button><a href="./mail.html">EMail-Adresse</a></button></div>
+    <!--<div><button><a href="./wifi.html">WIFI</a></button></div>-->
+    <div><button><a href="./cal.html">Kalender-Termin</a></button></div>
+{% endblock %}
