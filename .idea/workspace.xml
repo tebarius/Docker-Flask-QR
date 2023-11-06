@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="css,mail,tel,url,calendar fertig">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/cal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/mail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/tel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/text.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/url.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/wifi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flask-QR.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Flask-QR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/cal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/cal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/qr.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/qr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/wifi.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/wifi.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +27,26 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tebarius&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7d5c729f-fa2d-4d9c-8a19-05f5f07a37c9" />
+        <option name="url" value="https://github.com/tebarius/Docker-Flask-QR.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,7 +68,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/templates",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -85,11 +94,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.Dockerfile-Raspi" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,6 +104,15 @@
       <option name="presentableId" value="Default" />
       <updated>1698755716250</updated>
     </task>
+    <task id="LOCAL-00001" summary="css,mail,tel,url,calendar fertig">
+      <option name="closed" value="true" />
+      <created>1699219722200</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699219722200</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,7 +120,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

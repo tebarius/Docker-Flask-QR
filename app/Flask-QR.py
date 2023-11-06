@@ -55,7 +55,7 @@ def cal():
 
 @app.route("/qr.html")
 def makeqr():
-    data = ""
+    data = "Sorry kein Inhalt!!!"
     if request.args.get('type') == "text":
         data = request.args.get('text')
 
@@ -72,8 +72,18 @@ def makeqr():
         pass
 
     elif request.args.get('type') == "wifi":
-        pass
-
+        passw = (request.args.get("passw").replace("\\", "\\\\").replace(";", "\\;")
+                 .replace(",", "\\,").replace(":", "\\:").replace("\"", "\\\""))
+        ssid = (request.args.get("ssid").replace("\\", "\\\\").replace(";", "\\;")
+                .replace(",", "\\,").replace(":", "\\:").replace("\"", "\\\""))
+        if request.args.get("auth") == "WPA":
+            data = f'WIFI:T:WPA;S:"{ssid}";P:"{passw}"'
+        else:
+            data = f'WIFI:T:nopass;S:"{ssid}"'
+        if request.args.get("hidden"):
+            data += "H:true;;"
+        else:
+            data += ";"
     elif request.args.get('type') == "cal":
         # Format für Calendar (Zeilenumbrüche beachten!!):
         # BEGIN:VEVENT
@@ -124,9 +134,6 @@ def makeqr():
             else:
                 data += "?"
             data += f"body={request.args.get('body')}"
-
-    else:
-        data = "Sorry kein Inhalt!!!"
     return render_template('qr.html', data=data)
 
 
