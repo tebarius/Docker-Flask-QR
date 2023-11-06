@@ -26,3 +26,16 @@
         border-radius: 50px;
         filter: drop-shadow(10px 10px 10px blue);
         }
+    input[type='radio']
+        {
+          transform: scale(4);
+          margin: 10px;
+          vertical-align:12px;
+          }
+    input[type='checkbox']
+        {
+          transform: scale(4);
+          margin: 10px;
+          vertical-align:12px;
+          }
+
