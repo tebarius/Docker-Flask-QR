@@ -2,26 +2,26 @@
         text-align: center;
         background-color: #eee;
         border-radius: 60px;
-        filter: drop-shadow(10px 10px 20px blue);
-        font-size: 70px;
+        filter: drop-shadow(10px 10px 15px blue);
+        font-size: 60px;
         }
     p {
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
         }
     div {
        text-align: center;
-       font-size: 50px;
+       font-size: 40px;
        }
     form {
            text-align: center;
-           font-size: 50px;
+           font-size: 40px;
            }
-    input { font-size: 30px;
+    input { font-size: 40px;
             }
     button {
         border: solid gainsboro;
-        font-size: 30px;
+        font-size: 40px;
         margin: 15px;
         border-radius: 50px;
         filter: drop-shadow(10px 10px 10px blue);
@@ -30,12 +30,12 @@
         {
           transform: scale(4);
           margin: 10px;
-          vertical-align:12px;
+          vertical-align:10px;
           }
     input[type='checkbox']
         {
           transform: scale(4);
           margin: 10px;
-          vertical-align:12px;
+          vertical-align:10px;
           }
 
