@@ -66,6 +66,24 @@ def makeqr():
         data = f"tel:{request.args.get('tel')}"
 
     elif request.args.get('type') == "vcard":
+        #BEGIN:VCARD
+        #VERSION:3.0
+        #N:Nachname;Vorname;;Titel;
+        #FN:Titel Vorname Nachname
+        #ORG:Firma
+        #TITLE:Job-Titel(Funktion)
+        #ADR:Postfach;Adresszusatz;straße;stadt;Bundesland;plz;Land
+        #TEL;TYPE=VOICE,WORK:Telefon
+        #TEL;TYPE=CELL,WORK:Mobil
+        #TEL;TYPE=VOICE,HOME:Telefon
+        #TEL;TYPE=CELL,HOME:Mobil
+        #TEL;FAX:Fax
+        #EMAIL;TYPE=WORK:E-Mail
+        #EMAIL;TYPE=HOME:E-Mail
+        #URL:website
+        #BDAY:--0203
+        #NICKNAME:spitzname
+        #END:VCARD
         pass
 
     elif request.args.get('type') == "geo":
