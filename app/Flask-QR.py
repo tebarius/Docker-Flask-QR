@@ -33,6 +33,11 @@ def vcard():
     return render_template('vcard.html')
 
 
+@app.route("/mecard.html")
+def mecard():
+    return render_template('mecard.html')
+
+
 @app.route("/geo.html")
 def geo():
     return render_template('geo.html')
@@ -64,6 +69,31 @@ def makeqr():
 
     elif request.args.get('type') == "tel":
         data = f"tel:{request.args.get('tel')}"
+
+    elif request.args.get('type') == "mecard":
+        titel = request.args.get("titel")
+        if titel != "":
+            titel += " "
+        data = (f"MECARD:N:{request.args.get('nname')},{titel}{request.args.get('vname')};"
+                f"ADR:{request.args.get('pbox')},{request.args.get('adresszusatz')},"
+                f"{request.args.get('strasse')},{request.args.get('ort')},{request.args.get('bland')},"
+                f"{request.args.get('plz')},{request.args.get('land')};")
+        if request.args.get('tel') != "":
+            data += f"TEL:{request.args.get('tel')};"
+        if request.args.get('mail') != "":
+            data += f"EMAIL:{request.args.get('mail')};"
+        if request.args.get('url') != "":
+            data += f"URL:{request.args.get('url')};"
+        if request.args.get('tel') != "":
+            data += f"TEL:{request.args.get('tel')};"
+        if request.args.get('nickname') != "":
+            data += f"NICKNAME:{request.args.get('nickname')};"
+        if request.args.get('gebdate') != "":
+            data += f"BDAY:{request.args.get('gebdate').replace('-','')};"
+        if request.args.get('note') != "":
+            data += f"NOTE:{request.args.get('note')};"
+
+
 
     elif request.args.get('type') == "vcard":
         # BEGIN:VCARD
@@ -191,4 +221,4 @@ def makeqr():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=8002, debug=True)

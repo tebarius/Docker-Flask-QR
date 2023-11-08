@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="VCARD integriert">
+    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="python3.11 - Kompatibilität wieder hergestellt">
+      <change afterPath="$PROJECT_DIR$/app/templates/mecard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Flask-QR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +62,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2XWrX9sCJFSR4JSbdK3QdicYBvo" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,15 +76,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/templates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tebarius/IdeaProjects/Docker-Flask-QR/app/templates&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\app\templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\templates" />
@@ -86,13 +97,40 @@
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile-local">
+  <component name="RunManager" selected="Docker.Dockerfile-Raspi">
+    <configuration name="Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Docker-Flask-QR" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Docker-Flask-QR)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/Flask-QR.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.Dockerfile-local" />
+      <item itemvalue="Docker.Dockerfile-Raspi" />
+      <item itemvalue="Python.Flask-QR" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -135,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699392160202</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="python3.11 - Kompatibilität wieder hergestellt">
+      <option name="closed" value="true" />
+      <created>1699436397080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699436397080</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +211,11 @@
     <MESSAGE value="css,mail,tel,url,calendar fertig" />
     <MESSAGE value="VCARD-Inhalt geplant (in Flask-qr.py)" />
     <MESSAGE value="VCARD integriert" />
-    <option name="LAST_COMMIT_MESSAGE" value="VCARD integriert" />
+    <MESSAGE value="python3.11 - Kompatibilität wieder hergestellt" />
+    <option name="LAST_COMMIT_MESSAGE" value="python3.11 - Kompatibilität wieder hergestellt" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

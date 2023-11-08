@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Dockerfile-local" type="docker-deploy" factoryName="dockerfile" server-name="Docker-local">
+  <configuration default="false" name="Dockerfile-local" type="docker-deploy" factoryName="dockerfile">
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="flask-qrcode-gen:latest" />
@@ -7,7 +7,7 @@
         <option name="portBindings">
           <list>
             <DockerPortBindingImpl>
-              <option name="containerPort" value="80" />
+              <option name="containerPort" value="8002" />
               <option name="hostPort" value="8002" />
             </DockerPortBindingImpl>
           </list>
