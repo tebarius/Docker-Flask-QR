@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="python3.11 - Kompatibilität wieder hergestellt">
-      <change afterPath="$PROJECT_DIR$/app/templates/mecard.html" afterDir="false" />
+    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="MeCard ergänzt">
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Flask-QR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699436397080</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="MeCard ergänzt">
+      <option name="closed" value="true" />
+      <created>1699449023062</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699449023062</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,7 +213,8 @@
     <MESSAGE value="VCARD-Inhalt geplant (in Flask-qr.py)" />
     <MESSAGE value="VCARD integriert" />
     <MESSAGE value="python3.11 - Kompatibilität wieder hergestellt" />
-    <option name="LAST_COMMIT_MESSAGE" value="python3.11 - Kompatibilität wieder hergestellt" />
+    <MESSAGE value="MeCard ergänzt" />
+    <option name="LAST_COMMIT_MESSAGE" value="MeCard ergänzt" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

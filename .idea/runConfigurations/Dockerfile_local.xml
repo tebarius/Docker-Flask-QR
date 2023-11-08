@@ -12,6 +12,7 @@
             </DockerPortBindingImpl>
           </list>
         </option>
+        <option name="commandLineOptions" value="--restart unless-stopped" />
         <option name="sourceFilePath" value="Dockerfile" />
       </settings>
     </deployment>
