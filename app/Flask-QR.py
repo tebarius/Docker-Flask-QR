@@ -69,7 +69,16 @@ def makeqr():
 
     elif request.args.get('type') == "tel":
         data = f"tel:{request.args.get('tel')}"
-
+    elif request.args.get('type') == "geo":
+        data = "GEO:"
+        if request.args.get('ns') == "S":
+            data += "-"
+        data += f"{request.args.get('nsk')},"
+        if request.args.get('we') == "W":
+            data += "-"
+        data += f"{request.args.get('wek')}"
+        if request.args.get('high') != "":
+            data += f",{request.args.get('high')}"
     elif request.args.get('type') == "mecard":
         titel = request.args.get("titel")
         if titel != "":
@@ -92,9 +101,6 @@ def makeqr():
             data += f"BDAY:{request.args.get('gebdate').replace('-','')};"
         if request.args.get('note') != "":
             data += f"NOTE:{request.args.get('note')};"
-
-
-
     elif request.args.get('type') == "vcard":
         # BEGIN:VCARD
         # VERSION:3.0
@@ -153,7 +159,6 @@ def makeqr():
             else:
                 data += f"BDAY:{gebdate}\n"
         data += "END:VCARD\n"
-
     elif request.args.get('type') == "wifi":
         passw = (request.args.get("passw").replace("\\", "\\\\").replace(";", "\\;")
                  .replace(",", "\\,").replace(":", "\\:").replace("\"", "\\\""))
@@ -190,7 +195,6 @@ def makeqr():
                 f"LOCATION:{request.args.get('location')}\n"
                 f"DTSTART:{sdt}\nDTEND:{edt}\n"
                 f"END:VEVENT")
-
     elif request.args.get('type') == "mail":
         more = False
         data = f"mailto:{request.args.get('mail')}"

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form action="qr.html">
+    <label>Bitte Koordinaten angeben<br />(Dezimale Gradangabe - Bsp. 51.2332)</label><br>
+    <input type="hidden" name="type" value="geo">
+    <label>
+        <input name="ns" type="radio" value="N" required>
+    </label>N
+    <label>
+        <input name="ns" type="radio" value="S" required>
+    </label>
+    <label>
+    <input type="text" name="nsk" id="nsk" size="15" maxlength="20" inputmode="numeric" pattern="[0-9\.]+" required>
+    <br /><br />
+    </label>
+    <label>
+        <input name="we" type="radio" value="W" required>
+    </label>W
+    <label>
+        <input name="we" type="radio" value="W" required>
+    </label>S
+    <label>
+    <input type="text" name="wek" id="wek" size="15" maxlength="20" inputmode="numeric" pattern="[0-9\.]+" required>
+    <br /><br />
+    </label>
+    <label>
+        Höhe (in m):
+        <input type="number" name="high" size="5" maxlength="10"><br />
+    </label>
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+{% endblock %}
