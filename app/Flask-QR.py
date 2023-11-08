@@ -88,34 +88,34 @@ def makeqr():
         if titel != "":
             titel += " "
         data = (f"BEGIN:VCARD\nVERSION:3.0\nN:{request.args.get('nname')};"
-                f"{request.args.get("vname")};;{titel};\nFN:{titel}"
-                f"{request.args.get("vname")} {request.args.get("nname")}\n"
-                f"ADR:{request.args.get("pbox")};{request.args.get("adresszusatz")};"
-                f"{request.args.get("strasse")};{request.args.get("ort")};"
-                f"{request.args.get("bland")};{request.args.get("plz")};"
-                f"{request.args.get("land")}\n")
+                f"{request.args.get('vname')};;{titel};\nFN:{titel}"
+                f"{request.args.get('vname')} {request.args.get('nname')}\n"
+                f"ADR:{request.args.get('pbox')};{request.args.get('adresszusatz')};"
+                f"{request.args.get('strasse')};{request.args.get('ort')};"
+                f"{request.args.get('bland')};{request.args.get('plz')};"
+                f"{request.args.get('land')}\n")
         if request.args.get("org") != "":
-            data += f"ORG:{request.args.get("org")}\n"
+            data += f"ORG:{request.args.get('org')}\n"
         if request.args.get("jtitel") != "":
-            data += f"TITLE:{request.args.get("jtitel")}\n"
+            data += f"TITLE:{request.args.get('jtitel')}\n"
         if request.args.get("tel-a") != "":
-            data += f"TEL;TYPE=VOICE,WORK:{request.args.get("tel-a")}\n"
+            data += f"TEL;TYPE=VOICE,WORK:{request.args.get('tel-a')}\n"
         if request.args.get("mobil-a") != "":
-            data += f"TEL;TYPE=CELL,WORK:{request.args.get("mobil-a")}\n"
+            data += f"TEL;TYPE=CELL,WORK:{request.args.get('mobil-a')}\n"
         if request.args.get("tel-p") != "":
-            data += f"TEL;TYPE=VOICE,HOME:{request.args.get("tel-p")}\n"
+            data += f"TEL;TYPE=VOICE,HOME:{request.args.get('tel-p')}\n"
         if request.args.get("mobil-p") != "":
-            data += f"TEL;TYPE=CELL,HOME:{request.args.get("mobil-p")}\n"
+            data += f"TEL;TYPE=CELL,HOME:{request.args.get('mobil-p')}\n"
         if request.args.get("fax") != "":
-            data += f"TEL;TYPE=FAX:{request.args.get("fax")}\n"
+            data += f"TEL;TYPE=FAX:{request.args.get('fax')}\n"
         if request.args.get("mail-a") != "":
-            data += f"EMAIL;TYPE=WORK:{request.args.get("mail-a")}\n"
+            data += f"EMAIL;TYPE=WORK:{request.args.get('mail-a')}\n"
         if request.args.get("mail-p") != "":
-            data += f"EMAIL;TYPE=HOME:{request.args.get("mail-p")}\n"
+            data += f"EMAIL;TYPE=HOME:{request.args.get('mail-p')}\n"
         if request.args.get("url") != "":
-            data += f"URL:{request.args.get("url")}\n"
+            data += f"URL:{request.args.get('url')}\n"
         if request.args.get("nickname") != "":
-            data += f"NICKNAME:{request.args.get("nickname")}\n"
+            data += f"NICKNAME:{request.args.get('nickname')}\n"
         if request.args.get("gebdate") != "":
             gebdate = request.args.get('gebdate').replace('-', '')
             if request.args.get("ohneJahr"):
