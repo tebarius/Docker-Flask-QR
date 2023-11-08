@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,7 @@
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Flask-QR">
+  <component name="RunManager" selected="Docker.Dockerfile-local">
     <configuration name="Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Docker-Flask-QR" />
       <option name="INTERPRETER_OPTIONS" value="" />
