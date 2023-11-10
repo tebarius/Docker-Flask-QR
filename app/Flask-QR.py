@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # notwendige pakete via pip:
-# pip install Flask Flask-QRcode
+# pip install Flask-QRcode
 from flask import Flask, render_template, request
 from flask_qrcode import QRcode
 
