@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form method="POST" action="qr.html">
+    <label for="tel">Bitte Telefonnummer eingeben:</label><br>
+    <input type="hidden" name="type" value="tel" required>
+    <input type="tel" name="tel" id="tel" size="30" maxlength="30">
+    <br><br>
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+{% endblock %}

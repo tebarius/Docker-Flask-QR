@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form method="POST" action="qr.html">
+    <label>Gebe bitte Details für deinen Termin ein!</label><br />
+    <input type="hidden" name="type" value="cal">
+
+    <label for="title">Titel:</label>
+        <input type="text" name="title" id="title" size="30" maxlength="60" required><br />
+    <label for="sdate">Start-Datum</label>
+        <input type="date" name="sdate" id="sdate" required><br />
+    <br />
+    <label><i><u>optionale Angaben:</u></i></label><br />
+    <label for="stime">Start-Zeit</label>
+    <input type="time" name="stime" id="stime"><br />
+    <label for="edate">End-Datum</label>
+    <input type="date" name="edate" id="edate"><br />
+    <label for="etime">End-Zeit</label>
+    <input type="time" name="etime" id="etime"><br />
+    <label for="location">Ort:</label>
+        <input type="text" name="location" id="location" size="30" maxlength="120"><br />
+    <label for="description">weitere Notizen:</label>
+    <input type="text" name="description" id="description" size="30" maxlength="180"><br />
+
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+{% endblock %}

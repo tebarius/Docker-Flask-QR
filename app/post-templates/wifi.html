@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form method="POST" action="qr.html">
+    <label>Gebe bitte Details zum WIFI ein!</label><br />
+    <input type="hidden" name="type" value="wifi">
+
+    <label for="ssid">Netzwerkname (SSID):</label>
+        <input type="text" name="ssid" id="ssid" size="30" maxlength="60" required><br />
+    <label for="passw">Passcode &#47; Passwort:</label>
+        <input type="text" name="passw" id="passw" size="30" maxlength="60"><br />
+    <input type="checkbox" name="hidden" id="hidden" value=True>
+    <label for="hidden"><i>versteckte &#47; unsichtbare SSID</i></label><br />
+    <label>
+        <input name="auth" type="radio" value="WPA" required>
+    </label> WPA/WPA2/WPA3<br />
+    <label>
+        <input name="auth" type="radio" value="nopass" required>
+    </label> keine Verschl&uuml;sselung
+
+
+
+
+
+
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+{% endblock %}

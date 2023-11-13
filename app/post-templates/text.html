@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form method="POST" action="qr.html">
+    <label for="text">Was soll im QR-Code stehen?</label><br>
+    <input type="hidden" name="type" value="text">
+    <input type="text" name="text" id="text" size="30" maxlength="120" required>
+    <br><br>
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+{% endblock %}

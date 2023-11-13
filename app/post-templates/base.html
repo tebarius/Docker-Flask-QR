@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>QR-Code-Generator</title>
+    <!--suppress HtmlUnknownTarget -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!--suppress HtmlUnknownTarget -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+</head>
+
+<body>
+    <H1>QRCode-Generator</H1>
+    {% block inhalt %}
+    {% endblock %}
+</body>
+</html>

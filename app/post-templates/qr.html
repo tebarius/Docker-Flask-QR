@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<p>
+    <b>folgendes wurde im QR-Code codiert:</b><br>
+    {{ data }} <br>
+    <br>
+    <!--suppress HtmlUnknownTarget -->
+    <img src="{{ data|qrcode(fit=True, box_size=10, border=2, ) }}" alt="QR-Code f&uuml;r {{ data }}">
+</p>
+<p>
+<a href="index.html">Noch einmal bitte!</a>
+</p>
+{% endblock %}
+

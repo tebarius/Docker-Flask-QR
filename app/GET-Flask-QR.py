@@ -4,7 +4,7 @@
 from flask import Flask, render_template, request
 from flask_qrcode import QRcode
 
-app = Flask(__name__, static_folder='qr-static')
+app = Flask(__name__, static_folder='qr-static', template_folder='get-templates')
 QRcode(app)
 
 
@@ -104,7 +104,7 @@ def makeqr():
         if request.args.get('nickname') != "":
             data += f"NICKNAME:{request.args.get('nickname')};"
         if request.args.get('gebdate') != "":
-            data += f"BDAY:{request.args.get('gebdate').replace('-','')};"
+            data += f"BDAY:{request.args.get('gebdate').replace('-', '')};"
         if request.args.get('note') != "":
             data += f"NOTE:{request.args.get('note')};"
     elif request.args.get('type') == "vcard":
@@ -231,4 +231,4 @@ def makeqr():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8002, debug=True)
+    app.run(host='0.0.0.0', port=8002)

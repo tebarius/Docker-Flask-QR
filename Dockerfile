@@ -12,4 +12,8 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 8002
 
-CMD ["python", "Flask-QR.py"]
+# with GET-REQUESTS
+#CMD ["python", "GET-Flask-QR.py"]
+
+# the same with POST-REQUESTS
+CMD ["python", "Post-Flask-QR.py"]

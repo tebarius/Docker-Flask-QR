@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<form method="POST" action="qr.html">
+    <label>Gebe bitte Details für die Visitenkarte an!</label><br />
+    <input type="hidden" name="type" value="vcard">
+
+    <label for="vname">Vorname:</label>
+        <input type="text" name="vname" id="vname" size="30" maxlength="60" required><br />
+    <label for="nname">Nachname:</label>
+        <input type="text" name="nname" id="nname" size="30" maxlength="60" required><br />
+    <label><i><u>optionale Angaben:</u></i></label><br />
+    <label for="titel">Titel (z.B. Dr.,Prof.):</label>
+        <input type="text" name="titel" id="titel" size="10" maxlength="60"><br />
+    <label for="pbox">Postfach:</label>
+        <input type="text" name="pbox" id="pbox" size="30" maxlength="120"><br />
+    <label for="strasse">Strasse:</label>
+        <input type="text" name="strasse" id="strasse" size="30" maxlength="120"><br />
+    <label for="adresszusatz">Adresszusatz:</label>
+        <input type="text" name="adresszusatz" id="adresszusatz" size="30" maxlength="120"><br />
+    <label for="plz">Postleitzahl:</label>
+        <input type="text" name="plz" id="plz" size="30" maxlength="120"><br />
+    <label for="ort">Ort:</label>
+        <input type="text" name="ort" id="ort" size="30" maxlength="120"><br />
+    <label for="bland">Bundesland:</label>
+        <input type="text" name="bland" id="bland" size="30" maxlength="120"><br />
+    <label for="land">Land:</label>
+        <input type="text" name="land" id="land" size="30" maxlength="120"><br />
+    <br />
+    <label for="tel-p">Telefon (privat):</label>
+        <input type="tel" name="tel-p" id="tel-p" size="30" maxlength="120"><br />
+    <label for="mobil-p">Mobiltelefon (privat):</label>
+        <input type="tel" name="mobil-p" id="mobil-p" size="30" maxlength="120"><br />
+    <label for="mail-p">EMail (privat):</label>
+        <input type="email" name="mail-p" id="mail-p" size="30" maxlength="120"><br />
+    <br />
+    <label for="org">Organisation &#47; Firma:</label>
+        <input type="text" name="org" id="org" size="30" maxlength="120"><br />
+    <label for="jtitel">Job-Titel &#47; Funktion:</label>
+        <input type="text" name="jtitel" id="jtitel" size="30" maxlength="120"><br />
+    <label for="tel-a">Telefon (gesch.):</label>
+        <input type="tel" name="tel-a" id="tel-a" size="30" maxlength="120"><br />
+    <label for="mobil-a">Mobiltelefon (gesch.):</label>
+        <input type="tel" name="mobil-a" id="mobil-a" size="30" maxlength="120"><br />
+    <label for="mail-a">EMail (gesch.):</label>
+        <input type="email" name="mail-a" id="mail-a" size="30" maxlength="120"><br />
+    <br />
+    <label for="fax">Fax:</label>
+        <input type="tel" name="fax" id="fax" size="30" maxlength="120"><br />
+    <label for="url">Webseite:</label>
+        <input type="url" name="url" id="url" size="30" maxlength="120"><br />
+    <label for="nickname">Spitzname &#47; Pseudonym:</label>
+        <input type="text" name="nickname" id="nickname" size="30" maxlength="120"><br />
+    <label for="gebdate">Geburtsdatum</label>
+        <input type="date" name="gebdate" id="gebdate">
+        <label for="ohneJahr"><i>ohne Jahrezahl</i></label>
+            <input type="checkbox" name="ohneJahr" id="ohneJahr" value=True><br />
+    <br />
+    <button type="reset">Eingaben zur&uuml;cksetzen</button>
+    <button type="submit">Eingaben absenden</button>
+</form>
+
+{% endblock %}
