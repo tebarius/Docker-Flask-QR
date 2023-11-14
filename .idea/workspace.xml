@@ -5,35 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="Variante mit POST-REQUESTS ergänzt und Dockerfiles auf POST umgestellt">
-      <change afterPath="$PROJECT_DIR$/app/GET-Flask-QR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/cal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/geo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/mail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/mecard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/qr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/tel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/text.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/url.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/vcard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/post-templates/wifi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post-Flask-QR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/cal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/cal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/geo.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/geo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/mecard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/mecard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/qr.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/qr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/tel.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/tel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/text.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/text.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/url.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/url.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/vcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/vcard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/wifi.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/wifi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post-Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/POST-Flask-QR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,20 +64,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/Post-Flask-QR.py",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/Post-Flask-QR.py&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
@@ -117,7 +93,7 @@
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Post-Flask-QR">
+  <component name="RunManager" selected="Docker.Dockerfile-Raspi">
     <configuration name="GET-Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Docker-Flask-QR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Post-Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="POST-Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Docker-Flask-QR" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -153,7 +129,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/Post-Flask-QR.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/POST-Flask-QR.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,8 +147,8 @@
     <list>
       <item itemvalue="Docker.Dockerfile-local" />
       <item itemvalue="Docker.Dockerfile-Raspi" />
+      <item itemvalue="Python.POST-Flask-QR" />
       <item itemvalue="Python.GET-Flask-QR" />
-      <item itemvalue="Python.Post-Flask-QR" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
