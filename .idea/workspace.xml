@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="zip_post" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="ENV-Variable HTTP_METHOD eingeführt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/qr.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/qr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +52,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="temurin-17" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -70,11 +76,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/tebarius/IdeaProjects/Docker-Flask-QR/app/get-templates",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/POST-Flask-QR.py",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "configurable.group.other"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -92,7 +98,7 @@
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile-Raspi">
+  <component name="RunManager" selected="Docker.Dockerfile-local">
     <configuration name="GET-Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Docker-Flask-QR" />
       <option name="INTERPRETER_OPTIONS" value="" />
