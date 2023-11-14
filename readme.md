@@ -22,11 +22,6 @@ Es gibt 2 unterschiedliche Dockerfile's, da obwohl bei beiden python:slim als Ba
 noch die Installation von ein paar packages zusätzlich notwendig ist, damit flask auch auf
 dem RaspberryPi 3 via pip install integriert werden kann
 
-## Enviroment-Variablen
-- `HTTP_METHOD` GET oder POST (default: POST)
-
-
-## Docker
 In der Standardeinstellung werden die Formulare mit HTTP-POST-Anfragen gesendet/verarbeitet.  
 Sollte es Gründe geben, warum gewünscht wird, dass dies der HTTP-GET-Variante zu machen, lässt sich das über die Enviroment Variable HTTP_METHOD ändern.
 
