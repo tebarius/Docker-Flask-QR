@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="Variante mit POST-REQUESTS ergänzt und Dockerfiles auf POST umgestellt">
+    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="ENV-Variable HTTP_METHOD eingeführt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post-Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/POST-Flask-QR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/qr.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/get-templates/qr.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,27 +63,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/Post-Flask-QR.py&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/tebarius/IdeaProjects/Docker-Flask-QR/app/get-templates",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/get-templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\app" />
       <recent name="$PROJECT_DIR$/app/templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\app\templates" />
-      <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\app\static" />
@@ -232,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699621212644</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ENV-Variable HTTP_METHOD eingeführt">
+      <option name="closed" value="true" />
+      <created>1699968357620</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699968357620</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,7 +275,8 @@
     <MESSAGE value="geo.html verändert" />
     <MESSAGE value="pip-Kommentar in .py gekürzt" />
     <MESSAGE value="Variante mit POST-REQUESTS ergänzt und Dockerfiles auf POST umgestellt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Variante mit POST-REQUESTS ergänzt und Dockerfiles auf POST umgestellt" />
+    <MESSAGE value="ENV-Variable HTTP_METHOD eingeführt" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENV-Variable HTTP_METHOD eingeführt" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
