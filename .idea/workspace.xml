@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="readme.md geschrieben und Container auf Docker-Hub" />
+    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="readme.md geschrieben und Container auf Docker-Hub">
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +97,7 @@
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile-local">
+  <component name="RunManager">
     <configuration name="GET-Flask-QR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Docker-Flask-QR" />
       <option name="INTERPRETER_OPTIONS" value="" />

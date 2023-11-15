@@ -13,14 +13,14 @@ Voraussetzung ist eine funktionierende Python Installation (ich habe nur mit Pyt
 ... installieren lässt.  
   
 Zum Starten dann eine der beiden .py Dateien benutzen, je nachdem welcher
-HTTP-Modus gewollt ist. Im Zweifelsfall POST... nehmen und wenn ein Doppelklick nicht geht dann halt über die Konsole: `python POST-Flask-QR.py`
+HTTP-Modus gewollt ist. Im Zweifelsfall POST ... nehmen und wenn ein Doppelklick nicht geht dann halt über die Konsole: `python POST-Flask-QR.py`
 
 Der Server ist dann via http://localhost:8002 zu erreichen
 
 ## Docker
 Es gibt 2 unterschiedliche Dockerfile's, da obwohl bei beiden python:slim als Basis genutzt wird,
 noch die Installation von ein paar packages zusätzlich notwendig ist, damit flask auch auf
-dem RaspberryPi 3 via pip install integriert werden kann
+dem RaspberryPi 3 via pip install integriert werden kann.
 
 In der Standardeinstellung werden die Formulare mit HTTP-POST-Anfragen gesendet/verarbeitet.  
 Sollte es Gründe geben, warum gewünscht wird, dass dies der HTTP-GET-Variante zu machen, lässt sich das über die Enviroment Variable HTTP_METHOD ändern.
