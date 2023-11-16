@@ -33,17 +33,17 @@ Sollte es Gründe geben, warum gewünscht wird, dass dies der HTTP-GET-Variante 
 https://hub.docker.com/r/tebarius/flask-qrcode-generator
 ### Linux/AMD64
 - einfacher Start:  
-  `docker run -d -p 8002:8002 tebarius/flask-qrcode-generator`  
+  `docker run -d -p 8002:8002 ghcr.io/tebarius/flask-qrcode-generator:latest`  
   erreichbar dann z.B. via http://localhost:8002
 - mit HTTP-Methode GET auf Port 80:  
-  `docker run -d -p 80:8002 -e HTTP_METHOD=GET tebarius/flask-qrcode-generator`  
+  `docker run -d -p 80:8002 -e HTTP_METHOD=GET ghcr.io/tebarius/flask-qrcode-generator:latest`  
   erreichbar dann z.B. via http://localhost
 
 ### Linux/ARMv7 (getestet mit RaspberryPi 3)
 - einfacher Start:  
-  `docker run -d -p 8002:8002 tebarius/flask-qrcode-generator:armv7-latest`  
+  `docker run -d -p 8002:8002 ghcr.io/tebarius/flask-qrcode-generator:armv7-latest`  
   erreichbar dann z.B. via http://localhost:8002
 - mit HTTP-Methode GET auf Port80:  
-  `docker run -d -p 80:8002 -e HTTP_METHOD=GET tebarius/flask-qrcode-generator:armv7-latest`  
+  `docker run -d -p 80:8002 -e HTTP_METHOD=GET ghcr.io/tebarius/flask-qrcode-generator:armv7-latest`  
   erreichbar dann z.B. via http://localhost
 
