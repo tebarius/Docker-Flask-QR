@@ -28,13 +28,13 @@
         }
     input[type='radio']
         {
-          transform: scale(4);
+          transform: scale(3);
           margin: 10px;
           vertical-align:10px;
           }
     input[type='checkbox']
         {
-          transform: scale(4);
+          transform: scale(3);
           margin: 10px;
           vertical-align:10px;
           }

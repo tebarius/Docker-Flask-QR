@@ -171,9 +171,9 @@ def makeqr():
         ssid = (request.args.get("ssid").replace("\\", "\\\\").replace(";", "\\;")
                 .replace(",", "\\,").replace(":", "\\:").replace("\"", "\\\""))
         if request.args.get("auth") == "WPA":
-            data = f'WIFI:T:WPA;S:"{ssid}";P:"{passw}"'
+            data = f'WIFI:T:WPA;S:"{ssid}";P:"{passw}";'
         else:
-            data = f'WIFI:T:nopass;S:"{ssid}"'
+            data = f'WIFI:T:nopass;S:"{ssid}";'
         if request.args.get("hidden"):
             data += "H:true;;"
         else:

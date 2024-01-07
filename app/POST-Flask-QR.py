@@ -171,13 +171,14 @@ def makeqr():
         ssid = (request.form["ssid"].replace("\\", "\\\\").replace(";", "\\;")
                 .replace(",", "\\,").replace(":", "\\:").replace("\"", "\\\""))
         if request.form["auth"] == "WPA":
-            data = f'WIFI:T:WPA;S:"{ssid}";P:"{passw}"'
+            data = f'WIFI:T:WPA;S:"{ssid}";P:"{passw}";'
         else:
-            data = f'WIFI:T:nopass;S:"{ssid}"'
-        if request.form["hidden"]:
+            data = f'WIFI:T:nopass;S:"{ssid}";'
+        if 'ssid_hidden' in request.form:
             data += "H:true;;"
         else:
             data += ";"
+
     elif request.form['type'] == "cal":
         # Format für Calendar (Zeilenumbrüche beachten!!):
         # BEGIN:VEVENT

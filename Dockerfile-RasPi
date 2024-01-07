@@ -1,7 +1,7 @@
 FROM python:slim
 
 LABEL authors="tebarius"
-LABEL version="1.2"
+LABEL version="1.2.1"
 LABEL description="QR-Code-Generator-Server with Flask-App"
 LABEL platform="Raspberry Pi 3 with Raspian"
 
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY ./app /app/
 
 RUN apt-get update && apt-get install -y gcc zlib1g-dev libjpeg-dev
-#RUN python -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 #RUN python -m pip install --upgrade pillow
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
