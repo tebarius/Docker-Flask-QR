@@ -1,17 +1,26 @@
 FROM python:slim
 
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+
 LABEL authors="tebarius"
-LABEL version="1.2.1"
+LABEL version="1.3.0"
 LABEL description="QR-Code-Generator-Server with Flask-App"
 
 WORKDIR /app
 COPY ./app /app/
 
-RUN pip install --upgrade pip
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN apt-get update && \
+    if [ "$TARGETPLATFORM" = "linux/arm/v7" ] || [ "$TARGETPLATFORM" = "linux/386" ]; then \
+        apt-get install -y --no-install-recommends zlib1g-dev libjpeg-dev gcc; \
+    fi && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 8002
 
-ENV HTTP_METHOD POST
+ENV HTTP_METHOD=POST
 
 CMD ["sh", "-c", "python ${HTTP_METHOD}-Flask-QR.py"]

@@ -9,17 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="URLs in readme.md auf ghcr.io">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_Raspi.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile_local.xml" afterDir="false" />
+    <list default="true" id="3fdfc273-527d-4717-bd6d-4ba98fba7555" name="Changes" comment="Bugfixes in wifi-qr + update DockerImages to v1.2.1">
+      <change afterPath="$PROJECT_DIR$/.idea/GitLink.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile-RasPi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GET-Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/GET-Flask-QR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/POST-Flask-QR.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/POST-Flask-QR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/post-templates/wifi.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/post-templates/wifi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/qr-static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/qr-static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile-RasPi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +83,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "multiarch-docker",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/mager/Documents/IntelliJ/Docker-Flask-QR/app/POST-Flask-QR.py",
+    "last_opened_file_path": "D:/mager/Documents/IntelliJ/Docker-Flask-QR",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -98,8 +94,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/get-templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR" />
+      <recent name="$PROJECT_DIR$/app/get-templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\app" />
       <recent name="$PROJECT_DIR$/app/templates" />
       <recent name="D:\mager\Documents\IntelliJ\Docker-Flask-QR\app\templates" />
@@ -290,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700154394950</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Bugfixes in wifi-qr + update DockerImages to v1.2.1">
+      <option name="closed" value="true" />
+      <created>1704660840945</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1704660840970</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,7 +333,8 @@
     <MESSAGE value="ENV-Variable HTTP_METHOD eingeführt" />
     <MESSAGE value="readme.md geschrieben und Container auf Docker-Hub" />
     <MESSAGE value="URLs in readme.md auf ghcr.io" />
-    <option name="LAST_COMMIT_MESSAGE" value="URLs in readme.md auf ghcr.io" />
+    <MESSAGE value="Bugfixes in wifi-qr + update DockerImages to v1.2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes in wifi-qr + update DockerImages to v1.2.1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
