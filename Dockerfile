@@ -4,7 +4,7 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
 LABEL authors="tebarius"
-LABEL version="1.3.0"
+LABEL version="1.4.0"
 LABEL description="QR-Code-Generator-Server with Flask-App"
 
 WORKDIR /app

@@ -11,7 +11,7 @@ Um lokal das ganze zu testen werden nur die Dateien aus dem app-Verzeichnis ben�
 Voraussetzung ist eine funktionierende Python Installation und das Flask-Framework inclusive Flask-QRcode welches sich
 recht einfach über die Konsole mit ...  
 
-    pip install Flask-QRcode
+    pip install Flask-QRcode waitress
 ... installieren lässt.  
   
 Zum Starten dann eine der beiden .py Dateien benutzen, je nachdem welcher

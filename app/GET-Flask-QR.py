@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # notwendige pakete via pip:
-# pip install Flask-QRcode
+# pip install Flask-QRcode waitress
 from flask import Flask, render_template, request
 from flask_qrcode import QRcode
 
@@ -231,4 +231,7 @@ def makeqr():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8002)
+    # app.run(host='0.0.0.0', port=8002)
+    from waitress import serve
+    print("http://localhost:8002")
+    serve(app, host="0.0.0.0", port=8002)
