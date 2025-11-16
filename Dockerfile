@@ -1,10 +1,10 @@
-FROM python:slim
+FROM python:3.13-slim
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
 LABEL authors="tebarius"
-LABEL version="1.4.0"
+LABEL version="1.5.0"
 LABEL description="QR-Code-Generator-Server with Flask-App"
 
 WORKDIR /app
@@ -17,6 +17,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN python -m pip install --upgrade pip
 RUN pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 8002

@@ -1,3 +1,7 @@
+    body {
+            background: transparent !important;
+         }
+
     H1 {
         text-align: center;
         background-color: #eee;

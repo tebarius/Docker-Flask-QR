@@ -1,0 +1,6 @@
+services:
+  qr-dev:
+    build: ./
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
