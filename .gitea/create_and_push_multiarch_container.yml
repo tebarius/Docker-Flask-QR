@@ -1,0 +1,64 @@
+name: release-tag
+
+on:
+  workflow_dispatch: # Manuelles Auslösen des Workflows
+    inputs:
+      image_tag:
+        description: '2. Tag für das Docker-Image (außer latest) (z.B. v1.0.0)'
+        required: true
+        default: '1.5.0'
+
+env:
+  image_name_gitea: flask-qr
+  image_name_github: flask-qrcode-generator
+  image_name_dockerhub: flask-qrcode-generator
+  registry_gitea: gitea.tebarius.duckdns.org
+  registry_github: ghcr.io
+  user: tebarius
+
+jobs:
+  release-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Login to Gitea
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.registry_gitea }}
+          username: ${{ env.user }}
+          password: ${{ secrets.IMAGE_REGISTRY_TOKEN_GITEA }}
+
+      - name: Login to Github
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.registry_github }}
+          username: ${{ env.user }}
+          password: ${{ secrets.TOKEN_GITHUB }}
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.user }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Build and push
+        run: |
+          # Stelle sicher, dass Buildx aktiviert ist
+          docker buildx create --use
+
+          # Führe den Multiarch-Build aus und pushe das Image
+          docker buildx build \
+            --file ./Dockerfile \
+            --platform linux/amd64 \
+            --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.event.inputs.image_tag }} \
+            --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.event.inputs.image_tag }} \
+            --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.event.inputs.image_tag }} \
+            --push ./
+#            --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:latest \
+#            --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:latest \
+#            --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:latest \
