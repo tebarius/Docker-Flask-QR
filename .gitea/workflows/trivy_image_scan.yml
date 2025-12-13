@@ -1,0 +1,28 @@
+name: release-tag
+
+on:
+  workflow_dispatch: # Manuelles Auslösen des Workflows
+    inputs:
+      image_tag:
+        description: 'Tag für das zu scannende Docker-Image z.B. latest'
+        required: true
+        default: 'latest'
+
+env:
+  image_name_gitea: flask-qr
+  registry_gitea: gitea.tebarius.duckdns.org
+  user: tebarius
+
+jobs:
+  trivy_image_scan:
+    runs-on: ubuntu-latest
+    container: aquasec/trivy:latest
+    steps:
+      - name: Scan image with trivy
+        run: |
+          trivy image \
+          --exit-code 1 \
+          --scanners vuln,misconfig,secret \
+          --severity MEDIUM,HIGH,CRITICAL \
+          --ignore-unfixed \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.event.inputs.image_tag }}
