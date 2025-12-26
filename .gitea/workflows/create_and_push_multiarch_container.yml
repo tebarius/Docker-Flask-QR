@@ -6,7 +6,7 @@ on:
       image_tag:
         description: '2. Tag für das Docker-Image (außer latest) (z.B. v1.0.0)'
         required: true
-        default: '1.5.0'
+        default: '1.6.0'
 
 env:
   image_name_gitea: flask-qr
