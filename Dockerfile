@@ -1,14 +1,13 @@
-FROM python:3.13-slim
+FROM python:3.14-slim
+LABEL authors="tebarius"
+LABEL description="QR-Code-Generator-Server with Flask-App"
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
-
-LABEL authors="tebarius"
-LABEL version="1.5.0"
-LABEL description="QR-Code-Generator-Server with Flask-App"
-
-WORKDIR /app
-COPY ./app /app/
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/qr-venv/bin:$PATH"
+ENV HTTP_METHOD=POST
 
 RUN apt-get update && \
     if [ "$TARGETPLATFORM" = "linux/arm/v7" ] || [ "$TARGETPLATFORM" = "linux/386" ]; then \
@@ -17,11 +16,17 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN python -m pip install --upgrade pip
-RUN pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+WORKDIR /app
+COPY ./app /app/
+
+RUN python -m venv /qr-venv \
+    && python -m pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
+    && useradd -m -u 1000 qr \
+    && chown -R qr:qr /app
+
+USER qr
 
 EXPOSE 8002
-
-ENV HTTP_METHOD=POST
 
 CMD ["sh", "-c", "python ${HTTP_METHOD}-Flask-QR.py"]
