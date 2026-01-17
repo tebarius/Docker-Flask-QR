@@ -1,4 +1,5 @@
-name: release-tag
+name: trivy-scan-image
+run-name: Trivy - Scan Docker Image
 
 on:
   workflow_dispatch: # Manuelles Auslösen des Workflows

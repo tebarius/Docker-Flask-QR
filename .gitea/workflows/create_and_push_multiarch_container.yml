@@ -1,4 +1,5 @@
-name: release-tag
+name: build-image
+run-name: build and push Docker-Image
 
 on:
   workflow_dispatch: # Manuelles Auslösen des Workflows
