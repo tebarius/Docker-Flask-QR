@@ -8,9 +8,12 @@ on:
         description: 'Tag für das zu scannende Docker-Image z.B. latest'
         required: true
         default: 'latest'
+  schedule:
+    - cron: '30 1 * * 5'
 
 env:
   image_name_gitea: flask-qr
+  image_tag: ${{ github.event.inputs.image_tag || 'latest' }}
   registry_gitea: gitea.tebarius.duckdns.org
   user: tebarius
 
@@ -22,8 +25,10 @@ jobs:
       - name: Scan image with trivy
         run: |
           trivy image \
+          --username ${{ env.user }} \
+          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
           --severity MEDIUM,HIGH,CRITICAL \
           --ignore-unfixed \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.event.inputs.image_tag }}
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
