@@ -6,7 +6,6 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PATH="/qr-venv/bin:$PATH"
 ENV HTTP_METHOD=POST
 
 RUN apt-get update && \
@@ -19,8 +18,7 @@ RUN apt-get update && \
 WORKDIR /app
 COPY ./app /app/
 
-RUN python -m venv /qr-venv \
-    && python -m pip install --upgrade pip \
+RUN python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
     && useradd -m -u 1000 qr \
     && chown -R qr:qr /app
