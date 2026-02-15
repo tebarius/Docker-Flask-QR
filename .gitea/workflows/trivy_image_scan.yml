@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
     steps:
-      - name: Scan linux/amd64-image ${{ env.image_tag }}
+      - name: Scan linux/amd64-image
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -33,7 +33,7 @@ jobs:
           --ignore-unfixed \
           --platform linux/amd64 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/386-image ${{ env.image_tag }}
+      - name: Scan linux/386-image
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -44,7 +44,7 @@ jobs:
           --ignore-unfixed \
           --platform linux/386 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm64 ${{ env.image_tag }}
+      - name: Scan linux/arm64-image
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -55,7 +55,7 @@ jobs:
           --ignore-unfixed \
           --platform linux/arm64 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm/v7-image ${{ env.image_tag }}
+      - name: Scan linux/arm/v7-image
         run: |
           trivy image \
           --username ${{ env.user }} \
