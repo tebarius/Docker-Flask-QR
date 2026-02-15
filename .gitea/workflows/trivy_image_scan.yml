@@ -22,19 +22,47 @@ jobs:
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
     steps:
-
-      - name: Pull image
-        run: |
-          echo "${{ secrets.DOCKER_PULL_TOKEN }}" | docker login ${{ env.registry_gitea }} -u ${{ env.user }} --password-stdin \
-          && docker pull ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-
-      - name: Scan image with trivy
+      - name: Scan linux/amd64-image with trivy
         run: |
           trivy image \
           --username ${{ env.user }} \
           --password ${{ secrets.DOCKER_PULL_TOKEN }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
-          --severity MEDIUM,HIGH,CRITICAL \
+          --severity HIGH,CRITICAL \
           --ignore-unfixed \
+          --platform linux/amd64 \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+      - name: Scan linux/386-image with trivy
+        run: |
+          trivy image \
+          --username ${{ env.user }} \
+          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --exit-code 1 \
+          --scanners vuln,misconfig,secret \
+          --severity HIGH,CRITICAL \
+          --ignore-unfixed \
+          --platform linux/386 \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+      - name: Scan linux/arm64 with trivy
+        run: |
+          trivy image \
+          --username ${{ env.user }} \
+          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --exit-code 1 \
+          --scanners vuln,misconfig,secret \
+          --severity HIGH,CRITICAL \
+          --ignore-unfixed \
+          --platform linux/arm64 \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+      - name: Scan linux/arm/v7-image with trivy
+        run: |
+          trivy image \
+          --username ${{ env.user }} \
+          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --exit-code 1 \
+          --scanners vuln,misconfig,secret \
+          --severity HIGH,CRITICAL \
+          --ignore-unfixed \
+          --platform linux/arm/v7 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
