@@ -1,5 +1,5 @@
 name: trivy-scan-image
-# run-name: Trivy - Scan Docker Image ${{ env.image_tag }}
+run-name: Trivy - Scan Docker Image ${{ env.image_tag }}
 
 on:
   workflow_dispatch: # Manuelles Auslösen des Workflows
@@ -19,11 +19,10 @@ env:
 
 jobs:
   trivy_image_scan:
-    name: Trivy - Scan Docker Image ${{ env.image_tag }}
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
     steps:
-      - name: Scan linux/amd64-image with trivy
+      - name: Scan linux/amd64-image ${{ env.image_tag }}
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -34,7 +33,7 @@ jobs:
           --ignore-unfixed \
           --platform linux/amd64 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/386-image with trivy
+      - name: Scan linux/386-image ${{ env.image_tag }}
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -45,7 +44,7 @@ jobs:
           --ignore-unfixed \
           --platform linux/386 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm64 with trivy
+      - name: Scan linux/arm64 ${{ env.image_tag }}
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -56,7 +55,7 @@ jobs:
           --ignore-unfixed \
           --platform linux/arm64 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm/v7-image with trivy
+      - name: Scan linux/arm/v7-image ${{ env.image_tag }}
         run: |
           trivy image \
           --username ${{ env.user }} \
