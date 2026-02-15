@@ -19,6 +19,7 @@ env:
 
 jobs:
   trivy_image_scan:
+    name: "Trivy-Image-Scan for Image-Tag: ${{ env.image_tag }}"
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
     steps:
