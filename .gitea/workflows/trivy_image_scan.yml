@@ -1,5 +1,5 @@
 name: trivy-scan-image
-run-name: Trivy - Scan Docker Image ${{ env.image_tag }}
+# run-name: Trivy - Scan Docker Image ${{ env.image_tag }}
 
 on:
   workflow_dispatch: # Manuelles Auslösen des Workflows
@@ -19,6 +19,7 @@ env:
 
 jobs:
   trivy_image_scan:
+    name: Trivy - Scan Docker Image ${{ env.image_tag }}
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
     steps:
