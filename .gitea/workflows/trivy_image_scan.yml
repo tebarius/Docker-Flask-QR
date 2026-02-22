@@ -66,3 +66,29 @@ jobs:
           --ignore-unfixed \
           --platform linux/arm/v7 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+
+  telegram-notify:
+    needs: trivy_image_scan
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Telegram Alert
+      run: |
+        case "${{ needs.trivy_image_scan.result }}" in
+            "success")  EMOJI="✅"; MSG="OK" ;;
+            "failure")  EMOJI="❌"; MSG="WARN!" ;;
+            "cancelled") EMOJI="⏹️"; MSG="Canceled" ;;
+            *) EMOJI="❓"; MSG="Unknown-State: ${{ needs.trivy_image_scan.result }}" ;;
+        esac
+        
+        curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+        -H 'Content-Type: application/json' \
+        -d "{
+        \"chat_id\": \"${{ secrets.TELEGRAM_CHAT_ID }}\",
+        \"parse_mode\": \"HTML\",
+        \"text\": 
+        \"$EMOJI <b>$MSG - Scan ${{ env.image_name_gitea }}:${{ env.image_tag }}</b>
+        <i>$(date +"%Y-%m-%d  %T")</i>
+        Trivy-Image-Scan of: <b><i>${{ env.image_name_gitea }}:${{ env.image_tag }}</i></b>
+        \"
+        }"
