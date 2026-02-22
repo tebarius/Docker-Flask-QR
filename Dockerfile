@@ -9,10 +9,10 @@ ENV PYTHONUNBUFFERED=1
 ENV HTTP_METHOD=POST
 
 RUN apt-get update && \
+    apt-get upgrade -y &&\
     if [ "$TARGETPLATFORM" = "linux/arm/v7" ] || [ "$TARGETPLATFORM" = "linux/386" ]; then \
         apt-get install -y --no-install-recommends zlib1g-dev libjpeg-dev gcc; \
     fi && \
-    apt-get upgrade -y &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
