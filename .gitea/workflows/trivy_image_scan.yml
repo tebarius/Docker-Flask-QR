@@ -90,5 +90,6 @@ jobs:
         \"$EMOJI <b>$MSG - Scan ${{ env.image_name_gitea }}:${{ env.image_tag }}</b>
         <i>$(date +"%Y-%m-%d  %T")</i>
         Trivy-Image-Scan of: <b><i>${{ env.image_name_gitea }}:${{ env.image_tag }}</i></b>
+        ${{ gitea.server_url }}/${{ gitea.repository }}
         \"
         }"
