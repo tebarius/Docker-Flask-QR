@@ -1,13 +1,10 @@
 name: build-image
-run-name: build and push Docker-Image
+run-name: build and push Docker-Image with tag:${{ github.ref_name }}
 
 on:
-  workflow_dispatch: # Manuelles Auslösen des Workflows
-    inputs:
-      image_tag:
-        description: '2. Tag für das Docker-Image (außer latest) (z.B. v1.0.0)'
-        required: true
-        default: '1.6.0'
+  push:
+    tags:
+      - "*"
 
 env:
   image_name_gitea: flask-qr
@@ -56,9 +53,9 @@ jobs:
           docker buildx build \
             --file ./Dockerfile \
             --platform linux/amd64,linux/386,linux/arm64,linux/arm/v7 \
-            --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.event.inputs.image_tag }} \
-            --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.event.inputs.image_tag }} \
-            --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.event.inputs.image_tag }} \
+            --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.ref_name }} \
+            --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.ref_name }} \
+            --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.ref_name }} \
             --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:latest \
             --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:latest \
             --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:latest \
