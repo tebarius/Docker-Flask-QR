@@ -60,3 +60,30 @@ jobs:
             --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:latest \
             --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:latest \
             --push ./
+  telegram-notify:
+    needs: release-image
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Telegram Alert
+      run: |
+        case "${{ needs.release-image.result }}" in
+            "success")  EMOJI="✅"; MSG="OK" ;;
+            "failure")  EMOJI="❌"; MSG="WARN!" ;;
+            "cancelled") EMOJI="⏹️"; MSG="Canceled" ;;
+            *) EMOJI="❓"; MSG="Unknown-State: ${{ needs.release-image.result }}" ;;
+        esac
+        
+        curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+        -H 'Content-Type: application/json' \
+        -d "{
+        \"chat_id\": \"${{ secrets.TELEGRAM_CHAT_ID }}\",
+        \"parse_mode\": \"HTML\",
+        \"text\": 
+        \"$EMOJI <b>$MSG - Build ${{ env.image_name_gitea }}:${{ github.ref_name }}</b>
+        <i>$(date +"%Y-%m-%d  %T")</i>
+        Build of Image: <b><i>${{ env.image_name_gitea }}:${{ github.ref_name }}</i></b>
+        ${{ gitea.server_url }}/${{ gitea.repository }}
+        \"
+        }"
+        
