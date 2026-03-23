@@ -8,8 +8,8 @@ on:
         description: 'Tag für das zu scannende Docker-Image z.B. latest'
         required: true
         default: 'latest'
-  schedule:
-    - cron: '30 1 * * 5'
+  #schedule:
+  #  - cron: '30 1 * * 5'
 
 env:
   image_name_gitea: flask-qr
