@@ -18,14 +18,20 @@ env:
   user: tebarius
 
 jobs:
-  trivy_image_scan:
+  force_pull_image:
     runs-on: ubuntu-latest
-    container: aquasec/trivy:canary
+    container: docker:dind
     steps:
       - name: Force pull of Image 
         run: |
           echo "${{ secrets.CI_TOKEN_PUSH_GITEA_REGISTRY }}" | docker login "${{ env.registry }}" -u "${{ env.user }}" --password-stdin
           docker pull ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+
+  trivy_image_scan:
+    needs: force_pull_image 
+    runs-on: ubuntu-latest
+    container: aquasec/trivy:canary
+    steps:
       - name: Scan linux/amd64-image
         run: |
           trivy image \
