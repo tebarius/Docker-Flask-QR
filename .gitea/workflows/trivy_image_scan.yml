@@ -26,7 +26,7 @@ jobs:
         run: |
           trivy image \
           --username ${{ env.user }} \
-          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
           --severity HIGH,CRITICAL \
@@ -37,7 +37,7 @@ jobs:
         run: |
           trivy image \
           --username ${{ env.user }} \
-          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
           --severity HIGH,CRITICAL \
@@ -48,7 +48,7 @@ jobs:
         run: |
           trivy image \
           --username ${{ env.user }} \
-          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
           --severity HIGH,CRITICAL \
@@ -59,7 +59,7 @@ jobs:
         run: |
           trivy image \
           --username ${{ env.user }} \
-          --password ${{ secrets.DOCKER_PULL_TOKEN }} \
+          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
           --severity HIGH,CRITICAL \
