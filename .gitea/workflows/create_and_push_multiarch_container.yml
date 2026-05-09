@@ -52,7 +52,7 @@ jobs:
           # Führe den Multiarch-Build aus und pushe das Image
           docker buildx build \
             --file ./Dockerfile \
-            --platform linux/amd64,linux/386,linux/arm64,linux/arm/v7 \
+            --platform linux/amd64,linux/arm64 \
             --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.ref_name }} \
             --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.ref_name }} \
             --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.ref_name }} \
@@ -86,4 +86,3 @@ jobs:
         ${{ gitea.server_url }}/${{ gitea.repository }}
         \"
         }"
-        

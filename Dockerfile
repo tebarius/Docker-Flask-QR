@@ -8,8 +8,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV HTTP_METHOD=POST
 
+# as with version 1.7.0 i stopped build for arch arm/v7 and 386 so this is not needed anymore
+# but not removed the if-part so it should also possible to build for these arches
 RUN apt-get update && \
-    apt-get upgrade -y &&\
+    apt-get upgrade -y && \
     if [ "$TARGETPLATFORM" = "linux/arm/v7" ] || [ "$TARGETPLATFORM" = "linux/386" ]; then \
         apt-get install -y --no-install-recommends zlib1g-dev libjpeg-dev gcc; \
     fi && \

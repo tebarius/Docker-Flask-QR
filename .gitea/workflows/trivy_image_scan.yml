@@ -43,17 +43,6 @@ jobs:
           --ignore-unfixed \
           --platform linux/amd64 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/386-image
-        run: |
-          trivy image \
-          --username ${{ env.user }} \
-          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
-          --exit-code 1 \
-          --scanners vuln,misconfig,secret \
-          --severity HIGH,CRITICAL \
-          --ignore-unfixed \
-          --platform linux/386 \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
       - name: Scan linux/arm64-image
         run: |
           trivy image \
@@ -64,17 +53,6 @@ jobs:
           --severity HIGH,CRITICAL \
           --ignore-unfixed \
           --platform linux/arm64 \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm/v7-image
-        run: |
-          trivy image \
-          --username ${{ env.user }} \
-          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
-          --exit-code 1 \
-          --scanners vuln,misconfig,secret \
-          --severity HIGH,CRITICAL \
-          --ignore-unfixed \
-          --platform linux/arm/v7 \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
 
   telegram-notify:
