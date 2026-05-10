@@ -11,6 +11,7 @@ COPY requirements.txt .
 
 RUN apk upgrade --no-cache --available \
     && apk add --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/main curl \
+    && python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 COPY ./app /app/
