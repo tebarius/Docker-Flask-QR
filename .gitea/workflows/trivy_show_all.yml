@@ -17,7 +17,6 @@ env:
 
 jobs:
   trivy_image_scan:
-    needs: force_pull_image 
     runs-on: ubuntu-latest
     container: aquasec/trivy:canary
     steps:
