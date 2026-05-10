@@ -57,12 +57,12 @@ jobs:
           sbom: true          # SPDX SBOM generieren
           provenance: true    # Build-Provenance
           tags: |
-            ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:latest \
-            ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.ref_name }} \
-            ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:latest \
-            ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.ref_name }} \
-            ${{ env.user }}/${{ env.image_name_dockerhub }}:latest \
-            ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.ref_name }} \
+            ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:latest
+            ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.ref_name }}
+            ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:latest
+            ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.ref_name }}
+            ${{ env.user }}/${{ env.image_name_dockerhub }}:latest
+            ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.ref_name }}
 
   telegram-notify:
     needs: release-image
