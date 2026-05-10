@@ -1,0 +1,39 @@
+name: trivy-show-all
+run-name: Trivy - Scan Docker Image ${{ env.image_tag }}
+
+on:
+  workflow_dispatch: # Manuelles Auslösen des Workflows
+    inputs:
+      image_tag:
+        description: 'Tag für das zu scannende Docker-Image z.B. latest'
+        required: true
+        default: 'latest'
+
+env:
+  image_name_gitea: flask-qr
+  image_tag: ${{ github.event.inputs.image_tag || 'latest' }}
+  registry_gitea: gitea.tebarius.duckdns.org
+  user: tebarius
+
+jobs:
+  trivy_image_scan:
+    needs: force_pull_image 
+    runs-on: ubuntu-latest
+    container: aquasec/trivy:canary
+    steps:
+      - name: Scan linux/amd64-image
+        run: |
+          trivy image \
+          --username ${{ env.user }} \
+          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
+          --scanners vuln,misconfig,secret \
+          --platform linux/amd64 \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+      - name: Scan linux/arm64-image
+        run: |
+          trivy image \
+          --username ${{ env.user }} \
+          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
+          --scanners vuln,misconfig,secret \
+          --platform linux/arm64 \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
