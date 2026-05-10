@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # notwendige pakete via pip:
 # pip install Flask-QRcode waitress
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_qrcode import QRcode
 
 app = Flask(__name__, static_folder='qr-static', template_folder='post-templates')
@@ -12,6 +12,9 @@ QRcode(app)
 def index():
     return render_template('index.html')
 
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify(status="ok"), 200
 
 @app.route("/index.html")
 def index_html():

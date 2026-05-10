@@ -21,9 +21,8 @@ die Konsole: `python POST-Flask-QR.py`
 Der Server ist dann via http://localhost:8002 zu erreichen
 
 ## Docker
-Ab Version 1.3.0 des Containers ist es ein Multi-Architektur-DockerContainer für AMD64, ARM64, i386 und ARMv7  
-Ab Version 1.7.0 nur noch für AMD64 und ARM64. (lokale builds für i386 und ARMv7 sollten noch möglich sein, werden
-aber nicht mehr geprüft)
+Ab Version 1.3.0 des Containers ist es ein Multi-Architektur-DockerContainer für AMD64, ARM64, i386 und ARMv7.  
+Ab Version 1.7.0 wird nur noch für AMD64 und ARM64 gebaut.
 
 In der Standardeinstellung werden die Formulare mit HTTP-POST-Anfragen gesendet/verarbeitet.  
 Sollte es Gründe geben, warum gewünscht wird, dass dies der HTTP-GET-Variante zu machen, lässt sich das über die

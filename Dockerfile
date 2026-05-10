@@ -1,33 +1,26 @@
-FROM python:3.14-slim
+FROM python:3.14-alpine
 LABEL authors="tebarius"
 LABEL description="QR-Code-Generator-Server with Flask-App"
 
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV HTTP_METHOD=POST
 
-# as with version 1.7.0 i stopped build for arch arm/v7 and 386 so this is not needed anymore
-# but not removed the if-part so it should also possible to build for these arches
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    if [ "$TARGETPLATFORM" = "linux/arm/v7" ] || [ "$TARGETPLATFORM" = "linux/386" ]; then \
-        apt-get install -y --no-install-recommends zlib1g-dev libjpeg-dev gcc; \
-    fi && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 WORKDIR /app
-COPY ./app /app/
+COPY requirements.txt .
 
-RUN python -m pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt \
-    && useradd -m -u 1000 qr \
+RUN apk upgrade --no-cache --available \
+    && apk add --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/main curl \
+    && pip install --no-cache-dir -r requirements.txt
+
+COPY ./app /app/
+RUN  adduser -D -H -u 1000 -s /bin/sh qr \
     && chown -R qr:qr /app
 
 USER qr
 
 EXPOSE 8002
+
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl --fail http://localhost:8002/health || exit 1
 
 CMD ["sh", "-c", "python ${HTTP_METHOD}-Flask-QR.py"]
