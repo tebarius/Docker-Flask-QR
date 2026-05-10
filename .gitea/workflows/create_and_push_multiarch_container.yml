@@ -48,23 +48,6 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Build and push
-        run: |
-          # Stelle sicher, dass Buildx aktiviert ist
-          docker buildx create --use
-
-          # Führe den Multiarch-Build aus und pushe das Image
-          docker buildx build \
-            --file ./Dockerfile \
-            --platform linux/amd64,linux/arm64 \
-            --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ github.ref_name }} \
-            --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:${{ github.ref_name }} \
-            --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:${{ github.ref_name }} \
-            --tag ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:latest \
-            --tag ${{ env.registry_github }}/${{ env.user }}/${{ env.image_name_github }}:latest \
-            --tag ${{ env.user }}/${{ env.image_name_dockerhub }}:latest \
-            --push ./
-
-      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
