@@ -18,7 +18,7 @@ env:
 jobs:
   trivy_image_scan:
     runs-on: ubuntu-latest
-    container: aquasec/trivy:canary
+    container: aquasec/trivy:latest
     steps:
       - name: Scan linux/amd64-image
         run: |
