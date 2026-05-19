@@ -26,11 +26,12 @@ jobs:
         run: |
           echo "${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }}" | docker login "${{ env.registry_gitea }}" -u "${{ env.user }}" --password-stdin
           docker pull ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+          docker pull aquasec/trivy:latest
 
   trivy_image_scan:
     needs: force_pull_image 
     runs-on: ubuntu-latest
-    container: aquasec/trivy:canary
+    container: aquasec/trivy:latest
     steps:
       - name: Scan linux/amd64-image
         run: |
