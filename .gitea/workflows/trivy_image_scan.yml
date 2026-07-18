@@ -12,7 +12,7 @@ on:
     - cron: '30 1 * * 5'
 
 env:
-  image_name_gitea: flask-qr
+  image_name: flask-qr
   image_tag: ${{ github.event.inputs.image_tag || 'latest' }}
   registry_gitea: gitea.tebarius.duckdns.org
   user: tebarius
@@ -25,15 +25,18 @@ jobs:
       - name: Force pull of Image 
         run: |
           echo "${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }}" | docker login "${{ env.registry_gitea }}" -u "${{ env.user }}" --password-stdin
-          docker pull ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+          docker pull ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name }}:${{ env.image_tag }}
           docker pull aquasec/trivy:latest
 
   trivy_image_scan:
     needs: force_pull_image 
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
+    strategy:
+      matrix:
+          platform: [linux/amd64, linux/arm64]
     steps:
-      - name: Scan linux/amd64-image
+      - name: Scan Image with trivy
         run: |
           trivy image \
           --username ${{ env.user }} \
@@ -42,19 +45,8 @@ jobs:
           --scanners vuln,misconfig,secret \
           --severity HIGH,CRITICAL \
           --ignore-unfixed \
-          --platform linux/amd64 \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm64-image
-        run: |
-          trivy image \
-          --username ${{ env.user }} \
-          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
-          --exit-code 1 \
-          --scanners vuln,misconfig,secret \
-          --severity HIGH,CRITICAL \
-          --ignore-unfixed \
-          --platform linux/arm64 \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+          --platform ${{ matrix.platform }} \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name }}:${{ env.image_tag }}
 
   telegram-notify:
     needs: trivy_image_scan
@@ -78,7 +70,7 @@ jobs:
         \"text\": 
         \"$EMOJI <b>$MSG - Scan ${{ env.image_name_gitea }}:${{ env.image_tag }}</b>
         <i>$(date +"%Y-%m-%d  %T")</i>
-        Trivy-Image-Scan of: <b><i>${{ env.image_name_gitea }}:${{ env.image_tag }}</i></b>
+        Trivy-Image-Scan of: <b><i>${{ env.image_name }}:${{ env.image_tag }}</i></b>
         ${{ gitea.server_url }}/${{ gitea.repository }}
         \"
         }"

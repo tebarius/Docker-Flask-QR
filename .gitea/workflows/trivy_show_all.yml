@@ -10,7 +10,7 @@ on:
         default: 'latest'
 
 env:
-  image_name_gitea: flask-qr
+  image_name: flask-qr
   image_tag: ${{ github.event.inputs.image_tag || 'latest' }}
   registry_gitea: gitea.tebarius.duckdns.org
   user: tebarius
@@ -19,20 +19,15 @@ jobs:
   trivy_image_scan:
     runs-on: ubuntu-latest
     container: aquasec/trivy:latest
+    strategy:
+      matrix:
+          platform: [linux/amd64, linux/arm64]
     steps:
-      - name: Scan linux/amd64-image
+      - name: Scan Image with trivy
         run: |
           trivy image \
           --username ${{ env.user }} \
           --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
           --scanners vuln,misconfig,secret \
-          --platform linux/amd64 \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
-      - name: Scan linux/arm64-image
-        run: |
-          trivy image \
-          --username ${{ env.user }} \
-          --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
-          --scanners vuln,misconfig,secret \
-          --platform linux/arm64 \
-          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name_gitea }}:${{ env.image_tag }}
+          --platform ${{ matrix.platform }} \
+          ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name }}:${{ env.image_tag }}
