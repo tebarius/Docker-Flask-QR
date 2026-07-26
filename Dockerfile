@@ -11,7 +11,6 @@ WORKDIR /app
 COPY requirements.txt .
 
 RUN apk upgrade --no-cache --available \
-    && apk add --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/main curl \
     && python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
@@ -23,6 +22,6 @@ USER qr
 
 EXPOSE 8002
 
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl --fail http://localhost:8002/health || exit 1
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD  wget -q -O /dev/null http://127.0.0.1:8002/health || exit 1
 
 CMD ["sh", "-c", "python ${HTTP_METHOD}-Flask-QR.py"]
