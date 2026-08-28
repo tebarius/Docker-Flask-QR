@@ -1,5 +1,5 @@
 name: trivy-show-all
-run-name: Trivy - Show All ${{ env.image_tag }}
+run-name: Trivy - Show All Image:${{ github.event.inputs.image_tag || 'latest' }}
 
 on:
   workflow_dispatch: # Manuelles Auslösen des Workflows

@@ -1,5 +1,5 @@
 name: trivy-scan-image
-run-name: Trivy - Scan Docker Image ${{ env.image_tag }}
+run-name: Trivy - Scan Docker Image:${{ github.event.inputs.image_tag || 'latest' }}
 
 on:
   workflow_dispatch: # Manuelles Auslösen des Workflows

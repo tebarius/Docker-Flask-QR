@@ -7,8 +7,9 @@ from flask_qrcode import QRcode
 app = Flask(__name__, static_folder='qr-static', template_folder='get-templates')
 QRcode(app)
 
-
 @app.route("/")
+@app.route("/index.html")
+@app.route("/index.htm")
 def index():
     return render_template('index.html')
 
@@ -16,15 +17,9 @@ def index():
 def health():
     return jsonify(status="ok"), 200
 
-@app.route("/index.html")
-def index_html():
-    return render_template('index.html')
-
-
 @app.route("/text.html")
 def text():
     return render_template('text.html')
-
 
 @app.route("/tel.html")
 def tel():
