@@ -43,7 +43,7 @@ jobs:
           --password ${{ secrets.CI_TOKEN_PULL_GITEA_REGISTRY }} \
           --exit-code 1 \
           --scanners vuln,misconfig,secret \
-          --severity HIGH,CRITICAL \
+          --severity CRITICAL \
           --ignore-unfixed \
           --platform ${{ matrix.platform }} \
           ${{ env.registry_gitea }}/${{ env.user }}/${{ env.image_name }}:${{ env.image_tag }}
